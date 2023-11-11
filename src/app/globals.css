@@ -2,26 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'Halvar-Bold';
+  src: url('/fonts/halvar-bold.woff2') format('woff2'),
+       url('/fonts/halvar-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --page-header-height: 100px;
+
+  --padding-desktop: 32px;
+
+  --color-primary-light: #ffffff;
+  --color-primary-dark: #293743;
+  --color-secondary-light: #ceb78b;
+  --color-gray: #b3b3b3;
+
+  --font-size-2xl: 4.44vw;
+
+  --font-primary: 'Halvar-Bold', sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
+  font-family: var(--font-primary);
+}
+
+.swiper-wrapper {
+  transition-timing-function: ease-out!important;
+}
+
+@layer utilities {
+  .link-hover-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .link-hover-opacity:hover {
+    opacity: 0.8;
+  }
+
+  .image-shadow {
+    background-image:
+      linear-gradient(180deg, rgba(17, 27, 35, 0.60) 0%, rgba(25, 39, 50, 0.00) 51.8%);
+  }
 }
