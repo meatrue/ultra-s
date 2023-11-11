@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import clsx from 'clsx';
 
+import { useHeaderContext } from '@/app/context/header-context';
 import { Navigation } from '@/components/navigation';
 import { BurgerIcon, LogoIcon } from '@/components/ui-kit';
-import { useHeaderContext } from '@/app/page';
 import { navLinks } from './data';
 import burgerAnimationData from './burger.json';
 import { HeaderTheme } from './types';

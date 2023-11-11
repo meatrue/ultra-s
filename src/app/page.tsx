@@ -6,20 +6,7 @@ import { PageHeader } from '@/components/page-header';
 import { PageSection } from '@/components/page-section';
 import { PromoSection } from '@/components/promo-section/view';
 import { HeaderTheme } from '@/components/page-header/types';
-
-type HeaderContextValue = {
-  theme: HeaderTheme,
-};
-
-const HeaderContext = React.createContext<HeaderContextValue>({theme: 'main'});
-
-export function useHeaderContext() {
-  const context = React.useContext(HeaderContext);
-  if (!context) {
-    throw new Error('Контекст не найден');
-  }
-  return context;
-}
+import { HeaderContext } from './context/header-context';
 
 const headerThemesBySection: HeaderTheme[] = ['main', 'dark', 'light'];
 
