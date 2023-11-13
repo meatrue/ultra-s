@@ -68,7 +68,12 @@ export const ProjectSlide: React.FC<ProjectSlideProps> = ({ project, isCurrent }
     <div className='relative w-full h-screen'>
       <ProjectHeader>
         <ProjectTitle>
-          <Image src={`/img/projects/logos/${name}.svg`} alt="" width={32} height={32} />
+          <Image
+            src={`/img/projects/logos/${name}.svg`}
+            alt=""
+            width={32}
+            height={32}
+          />
           {title}
         </ProjectTitle>
         <div className="w-[41%] pr-[148px]">
@@ -84,10 +89,12 @@ export const ProjectSlide: React.FC<ProjectSlideProps> = ({ project, isCurrent }
           'transition-transform duration-[1600ms] ease-linear will-change-transform',
           isCurrent ? 'scale-110' : 'scale-100',
         )}
-        src={`/img/projects/${name}.jpg`}
+        src={`/img/projects/${name}.webp`}
         alt=""
-        width="1400"
-        height="800"
+        width="2560"
+        height="1420"
+        quality={100}
+        priority
       />
       <ImageShadow />
     </div>
